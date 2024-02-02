@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
-
 a{
     text-decoration: none;
     color: #000;
@@ -107,7 +106,32 @@ h2.separator{
     font-size: 40px;
     margin-top: 40px;
 }
+.size-link {
+    position: relative;
+}
 
+.size-link::after {
+    content: "Доступные размеры S, M, L";
+    position: absolute;
+    bottom: -21px;
+    left: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.size-link:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.size-link:hover {
+    visibility: hidden;
+}
+
+.size-info {
+    opacity: 0;
+}
 .sell-nft{
     padding: 0 80px;
     margin: 50px 0 80px;
@@ -119,10 +143,10 @@ h2.separator{
 .sell-nft .item,
 .nft-shop .nft-list .item{
     padding: 20px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(7, 70, 143, 0.911);
+    transition: all 1s ease;
 }
 
 .sell-nft .item:hover,
@@ -138,7 +162,7 @@ h2.separator{
 }
 
 .sell-nft .item .header i{
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .sell-nft .item .header h5{
@@ -205,13 +229,13 @@ h2.separator{
 }
 
 .nft-shop .nft-list .item .btc i{
-    font-size: 22px;
-    color: #304ffe;
+    font-size: 24px;
+    color: #14004d;
 }
 
 .nft-shop .nft-list .item .btc p{
-    font-size: 22px;
-    color: #304ffe;
+    font-size: 16px;
+    color: #14004d;
 }
 
 .nft-shop .nft-list .item .info > p{
@@ -235,16 +259,16 @@ h2.separator{
 }
 
 .nft-shop .nft-list .item .bid a{
-    color: #304ffe;
+    color: #14004d;
     background: transparent;
     font-weight: bold;
-    transition: all 0.3s ease;
+    /* transition: all 1s ease; */
 }
 
-.nft-shop .nft-list .item .bid a:hover{
+/* .nft-shop .nft-list .item .bid a:hover{
     color: #fff;
     background-color: #000;
-}
+} */
 
 .view-more{
     margin: 10px 0 40px;
@@ -274,22 +298,23 @@ h2.separator{
     gap: 30px;
 }
 
-/* .sellers .item{
-    background: #fff;
+.sellers .item{
+    background: #9e9e9e60;
     display: flex;
     align-items: center;
+    margin-left: 200px;
     width: 25%;
     gap: 14px;
     padding: 14px;
     border-radius: 18px;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-} */
+    cursor:pointer;
+    box-shadow: 0 10px 30px rgb(80, 91, 151);
+    transition: all 2s ease;
+} 
 
-/* .sellers .item img{
-    width: 64px;
-} */
+.sellers .item img{
+    width: 150px;
+} 
 
 .sellers .item .info p{
     font-size: 14px;
@@ -321,7 +346,7 @@ footer .right .links{
 }
 
 footer .right .links a{
-    color: #989898;
+    color: #707070;
     transition: color 0.3s ease;
 }
 
@@ -363,7 +388,7 @@ footer .right p{
 
 .hero__box-img 
 {
-  animation: ava-bg 3s infinite alternate;
+  animation: ava-bg 2s infinite alternate;
 }
 @keyframes ava-animate 
 {
@@ -633,7 +658,7 @@ footer .right p{
     background-repeat: no-repeat;
     background-size: 50% 50%, 50% 50%;
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-    background-image: linear-gradient(#008cff, #008cff), linear-gradient(#043968, #00315c), linear-gradient(#90aabe, #288de0), linear-gradient(#0b151f, #337AB7);
+    background-image: linear-gradient(#008cff, #005eaa), linear-gradient(#043968, #00315c), linear-gradient(#a3a3a3, #0065b8), linear-gradient(#0b151f, #004a8b);
     animation: anim-ramka-5 7s linear infinite;
 }
 .ramka-5::after {
@@ -654,3 +679,127 @@ footer .right p{
         transform: rotate(1turn);
     }
 }
+/* коды для дополнительных карточек */
+* {
+    box-sizing: border-box;
+ }
+ .product-wrap {
+    width: 250px;
+    text-align: center;
+    background: white;
+    margin: 32px;
+    display: inline-block;
+    border-radius: 20px;
+ }
+ .product-image {
+    position: relative;
+ }
+ .product-image a {
+    display: block;
+ }
+ .product-image img {
+    display: block;
+    width: 100%;
+ }
+ .shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+ }
+ .product-wrap:hover .shadow {
+    opacity: 1;
+ }
+ .actions {
+    bottom: 15px;
+    right: 15px;
+    position: absolute;
+ }
+ .add-to-cart {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -50px);
+    transition: 1s ease-in-out;
+
+ }
+ .actions a {   
+    background: #202020;
+    color: white;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    width: 42px;
+    transition: .3s ease-in-out;
+    text-decoration: none;
+ }
+ .actions a:before {
+    font-family: FontAwesome;
+    font-size: 14px;
+ }
+ .add-to-cart-button:before {
+    content: "\f07a";
+ }
+ .add-to-wishlist-button:before {
+    content: "\f004";
+ }
+ .add-to-compare-button:before {
+    content: "\f079";
+ }
+ .quikview-button:before {
+    content: "\f002";
+ }
+ .actions a:hover {
+    background: #67BFA6;
+ }
+ .product-wrap:hover .add-to-cart {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+ }
+ .add-to-wishlist {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -50px);
+    transition: .8s ease-in-out;
+    margin: 9px 0 0;
+ }
+ .product-wrap:hover .add-to-wishlist, .product-wrap:hover .add-to-compare, .product-wrap:hover .quikview {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+ }
+ .add-to-compare {
+    opacity: 0;
+    position: relative;
+    visibility: hidden;
+    transition: .6s ease-in-out;
+    transform: translate(0, -50px);
+    margin: 9px 0 0;
+ }
+ .quikview {
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s ease-in-out;
+    transform: translate(0, -50px);
+    margin: 9px 0 0;
+ }
+ .product-list {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: 'Open Sans', serif;
+ }
+ .product-list h3 {
+    color: #555;
+    font-size: 15px;
+    font-family: 'Open Sans', serif;
+ }
+ .price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #ff7659;
+ }
